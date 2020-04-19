@@ -1,2 +1,2 @@
-# BlogList-App-Redux
-Redux version of React Blog List App
+# BlogList-App
+Blog list app build exercise with redux

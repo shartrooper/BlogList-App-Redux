@@ -1,0 +1,86 @@
+
+### create new blog, add valid token after login
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer --
+
+{
+    "title": "Cancerous/'s blog",
+    "author": "More cancer than ever",
+    "url":"https://cringy-as-hell.com",
+    "likes":"999"
+}
+
+###
+GET http://localhost:3003/api/blogs
+
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Marianas blog",
+    "author": "Salty deep",
+    "url":"https://goindarkbasin.com"
+}
+
+### Delete a blog of logged in user
+
+DELETE  http://localhost:3003/api/blogs/5d990b255a9393097436c218
+Authorization: bearer --
+
+### User creation
+
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username": "hellas",
+    "name": "Arto Hellas",
+    "password": "salainen"
+}
+
+### 2nd User creation
+
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username": "mluukkai",
+    "name": "Matti Lukkainen",
+    "password": "salainen"
+}
+
+### blog creater alongside any user as creator
+
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+
+{
+    "title": "Pools of Radiance",
+    "author": "Gorath the Moredhel",
+    "url":"https://KrondorThisWay.com"
+}
+
+
+### Unacceptable password length
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username": "Invalid",
+    "name": "Shorty",
+    "password": "s"
+}
+
+### GET users
+GET http://localhost:3001/api/users
+
+### LOGIN a valid user
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+    "username": "hellas",
+    "password": "salainen"
+}

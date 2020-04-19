@@ -1,0 +1,18 @@
+Jest is actually configured by default to applications created with create-react-app.
+
+In addition to Jest, we also need another testing library that will help us render components for testing purposes. 
+The best option for this used to be the enzyme library developed by Airbnb. 
+Unfortunately, Enzyme does not support React hooks properly, so we will instead use react-testing-library which has 
+seen rapid growth in popularity in recent times.
+
+Let's install the library with the command:
+npm install --save-dev @testing-library/react @testing-library/jest-dom
+
+NB: the console may issue a warning if you have not installed Watchman. 
+Watchman is an application developed by Facebook that watches for changes that are made to files. 
+The program speeds up the execution of tests and at least starting from macOS Sierra, 
+running tests in watch mode issues some warnings to the console, 
+that can be gotten rid of by installing Watchman.
+
+Instructions for installing Watchman on different operating systems can be found from 
+the official Watchman website: https://facebook.github.io/watchman/
