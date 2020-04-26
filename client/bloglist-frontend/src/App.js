@@ -6,13 +6,15 @@ import { getAllBlogs } from './reducers/blogReducer'
 import LoginForm from './components/loginForm'
 import Notification from './components/notification'
 import BlogList from './components/blogList'
+import Togglable from './components/togglable'
+import BlogForm from './components/newBlogForm'
 
 
 function App(props) {
 
   useEffect(() => {
-  const fetchData= ()=>props.getAllBlogs()
-  fetchData();
+    const fetchData = () => props.getAllBlogs()
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -41,6 +43,10 @@ function App(props) {
         (<div id="blogs-wrapper" className='blogs-wrapper'>
           <h3>Blogs</h3>
           <p>{props.user.name} is currently logged in! <button type="button" onClick={logoutFun}>Logout user</button></p>
+          <h3>Create new blog</h3>
+          <Togglable buttonLabel="New blog">
+            <BlogForm />
+          </Togglable>
           <BlogList />
         </div>)}
     </div>
